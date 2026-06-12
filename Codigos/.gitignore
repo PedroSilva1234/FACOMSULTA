@@ -1,8 +1,21 @@
+# Segredos
 .env
-venv/
+
+# Cache e Ambiente Virtual
 __pycache__/
-credentials.json
-token.json
+venv/
+.venv/
+
+banco_bm25.pkl
+banco_metadados.json
+banco_vetorial.index
+
+# Pastas de dados pesados ou gerados
+PASTA_CHUNKS/
+PASTA_EMBEDDINGS/
+PASTA_MD/
+PASTA_PDF/
+# Logs e arquivos temporários do Docker
 *.log
-lista1.pdf
-tarefas.json
+.docker-desktop/
+
