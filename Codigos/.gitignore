@@ -1,0 +1,8 @@
+.env
+venv/
+__pycache__/
+credentials.json
+token.json
+*.log
+lista1.pdf
+tarefas.json

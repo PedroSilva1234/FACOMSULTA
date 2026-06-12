@@ -1,0 +1,20 @@
+services:
+  rag-facom:
+    build: .
+    container_name: motor_rag_facom
+    env_file:
+      - .env  # Puxa a sua LIA_API_KEY e os caminhos base do Windows
+    environment:
+      # --- SOBRESCRITA PARA O LINUX (DOCKER) ---
+      # Aqui nós dizemos ao Docker para ignorar o "C:/..." do .env 
+      # e usar os caminhos relativos da pasta que acabamos de montar.
+      - PASTA_MD=./Documentos/Markdows
+      - PASTA_EMBEDDINGS=./Documentos/embeddings
+      - PASTA_PDF=./Documentos/PDFS
+      - PASTA_CHUNKS=./Documentos/Chunks
+    volumes:
+      # --- MAPEAMENTO DE PASTAS ---
+      # Lado Esquerdo (Seu Windows, voltando uma pasta) : Lado Direito (Dentro do Docker)
+      - ../Documentos:/app/Documentos
+    stdin_open: true  
+    tty: true
